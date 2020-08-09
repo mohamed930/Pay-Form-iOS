@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3xy-JD-p1B">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -161,7 +161,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fu-Z9-bgX">
-                                <rect key="frame" x="16" y="663" width="343" height="94"/>
+                                <rect key="frame" x="16" y="710" width="343" height="47"/>
                                 <state key="normal" backgroundImage="BTNPay"/>
                                 <connections>
                                     <action selector="BTNPay" destination="yqf-Pr-VMf" eventType="touchUpInside" id="Nod-hY-mLG"/>
@@ -457,7 +457,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdq-sG-oiw">
-                                        <rect key="frame" x="103" y="345" width="169" height="104"/>
+                                        <rect key="frame" x="103" y="397" width="169" height="52"/>
                                         <state key="normal" backgroundImage="BTNNext"/>
                                         <connections>
                                             <action selector="BTNNext:" destination="3xy-JD-p1B" eventType="touchUpInside" id="6Gt-MB-jiO"/>
@@ -594,6 +594,9 @@
                             <outlet property="outView2" destination="6p1-hU-4j1" id="0He-CX-aTu"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="card_no" destination="XaU-vp-0kk" id="AZq-do-1Un"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oK0-QM-vTf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -798,13 +801,14 @@
                                         <state key="normal" backgroundImage="Secondary Button - Small-Back"/>
                                         <connections>
                                             <action selector="BTNNext:" destination="3xy-JD-p1B" eventType="touchUpInside" id="ENc-Zy-Ip0"/>
+                                            <action selector="back:" destination="D7g-tJ-IIU" eventType="touchUpInside" id="sk1-F7-ThY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbb-kO-1H4">
                                         <rect key="frame" x="177.33333333333331" y="0.0" width="169" height="52"/>
                                         <state key="normal" backgroundImage="BTNNext"/>
                                         <connections>
-                                            <action selector="BTNNext:" destination="3xy-JD-p1B" eventType="touchUpInside" id="b3J-C1-F8p"/>
+                                            <action selector="finish:" destination="D7g-tJ-IIU" eventType="touchUpInside" id="KaC-1e-IRU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -861,6 +865,9 @@
                             <outlet property="outview2" destination="qaV-Up-RtI" id="zHa-7H-Fu4"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="master_labe" destination="zXL-f0-OYQ" id="TJ7-mp-rXw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SxK-xV-L4A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

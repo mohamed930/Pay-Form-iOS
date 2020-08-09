@@ -9,6 +9,7 @@
 import UIKit
 
 class PayPageViewController: UIViewController {
+    @IBOutlet weak var card_no: UITextField!
     
     var paypage: PayView! {
         guard isViewLoaded else { return nil }
@@ -26,6 +27,8 @@ class PayPageViewController: UIViewController {
         view.addGestureRecognizer(screenedge)
      
         setDesign()
+        
+     
     }
     
     @IBAction func BTNVisa (_ sender:Any) {
@@ -60,9 +63,16 @@ class PayPageViewController: UIViewController {
     }
     
     @IBAction func BTNNext(_ sender:Any) {
+        let textfieeld = view.viewWithTag(2) as! UITextField
+        let card_no = textfieeld.text
+        let index = (card_no?.index(card_no!.endIndex, offsetBy: -4))!
+        let mySubstring = card_no?.suffix(from: index)// playground
+ 
+        
         
         let story : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let next = story.instantiateViewController(withIdentifier: "SummaryPay") as! SummaryPayViewController
+        next.text = mySubstring!.lowercased()
         next.modalPresentationStyle = .fullScreen
         self.present(next, animated: true, completion: nil)
     }
@@ -159,20 +169,37 @@ extension PayPageViewController: UITextFieldDelegate {
         }
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField.tag == 2 {
-            let count = textField.text?.count
-            if count == 14 {
-                print("Done")
-            }
-            else if count! > 14 {
-                
-            }
-            else {
-                print("Please Enter Correct Number Card!")
-            }
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let count = textField.text?.count
+         if textField.tag == 2 {
+                   if count! > 14 {
+                    textField.deleteBackward()
+                       print("Done")
+                   }/*else if (count! % 4 == 0) {
+                    textField.insertText(" ")
+                   }*/
+                   else {
+                    //   textField.isEditing = false
+                       print("Please Enter Correct Number Card!")
+                   }
+               }
+         else if (textField.tag == 3 || textField.tag == 4){
+            
+            if count! > 2 {
+               textField.deleteBackward()
+                  print("Done")
+              }
+              else {
+               //   textField.isEditing = false
+                  print("Please Enter Correct Number Card!")
+              }
         }
+        
+        
     }
+  /*  func textFieldDidEndEditing(_ textField: UITextField) {
+       
+    }*/
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

@@ -8,13 +8,22 @@
 
 import UIKit
 import FirebaseFirestore
+import Stripe
+
 
 class Data {
     var Name:String?
     var ImageName = "hqdefault"
 }
 
-class SummaryPayViewController: UIViewController {
+
+class SummaryPayViewController: UIViewController , STPAddCardViewControllerDelegate{
+    func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var master_labe: UILabel!
+     var text = ""
     
     var summaryview: SummaryView! {
         guard isViewLoaded else { return nil }
@@ -25,13 +34,20 @@ class SummaryPayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
+        
         setDesign()
         setData()
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func setDesign () {
+        
+       self.master_labe.text = "**** **** **** "+text
         // Make First Circle.
         makecornerCircle(View: summaryview.outview1, borderColor: "#FA4248")
         makecornerCirclewithoutborder1(View: summaryview.inview1)
@@ -51,6 +67,14 @@ class SummaryPayViewController: UIViewController {
         summaryview.LineView.layer.backgroundColor = UIColor.clear.cgColor
     }
     
+    @IBAction func finish(_ sender: Any) {
+        let addcard = STPAddCardViewController()
+        addcard.delegate = self
+        
+        let fin = UINavigationController(rootViewController: addcard)
+        present(fin, animated: true, completion: nil)
+        
+    }
     func setData() {
         Firestore.firestore().collection("Data").getDocuments { (query, error) in
             if error != nil {
@@ -116,5 +140,13 @@ extension SummaryPayViewController: UICollectionViewDelegateFlowLayout {
         let cell_width = (w1 - (50+10)) / 2
         
         return CGSize(width: cell_width , height: summaryview.collectionView.frame.height)
+    }
+    
+    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock , token:STPToken) {
+        
+        
+        print("printing strip reponse " , token.allResponseFields)
+        print("printing strip id " , token.tokenId)
+        dismiss(animated: true, completion: nil)
     }
 }

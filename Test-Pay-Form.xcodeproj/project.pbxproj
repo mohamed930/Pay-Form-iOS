@@ -24,6 +24,7 @@
 		D332D10D24D622A50051B8DF /* PayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332D10C24D622A50051B8DF /* PayView.swift */; };
 		D332D10F24D6249A0051B8DF /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332D10E24D6249A0051B8DF /* color.swift */; };
 		D3DED3FF24DB812A00EC3170 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3DED3FE24DB812A00EC3170 /* GoogleService-Info.plist */; };
+		DC19AFD424DFFC760005C0E4 /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19AFD324DFFC760005C0E4 /* MyAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D332D10C24D622A50051B8DF /* PayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayView.swift; sourceTree = "<group>"; };
 		D332D10E24D6249A0051B8DF /* color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
 		D3DED3FE24DB812A00EC3170 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DC19AFD324DFFC760005C0E4 /* MyAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
 		F90D9A6C2FEFE3060F4442F2 /* Pods_Test_Pay_Form.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_Pay_Form.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F921A68425C3E2BAEEC96B7A /* Pods-Test-Pay-Form.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-Pay-Form.debug.xcconfig"; path = "Target Support Files/Pods-Test-Pay-Form/Pods-Test-Pay-Form.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D332D0EC24D5E28F0051B8DF /* AppDelegate.swift */,
+				DC19AFD324DFFC760005C0E4 /* MyAPIClient.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				D32C461B24D77F930021CE13 /* SummaryView.swift in Sources */,
 				D332D0ED24D5E28F0051B8DF /* AppDelegate.swift in Sources */,
 				D332D10924D60EF20051B8DF /* PickProductView.swift in Sources */,
+				DC19AFD424DFFC760005C0E4 /* MyAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

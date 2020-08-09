@@ -9,4 +9,7 @@ target 'Test-Pay-Form' do
   pod 'FirebaseCore'
   pod 'FirebaseFirestore'
   pod 'Firebase'
+  pod 'Stripe'
+
+
 end
